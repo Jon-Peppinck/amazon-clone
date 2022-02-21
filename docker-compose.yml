@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  mongo:
+    container_name: mongo
+    image: mongo:latest
+    environment:
+      - MONGO_DATABASE="amazon"
+    ports:
+      - 27017:27017
+
+  mongo-express:
+    container_name: mongo-express
+    image: mongo-express
+    environment:
+      - ME_CONFIG_MONGODB_SERVER=mongo
+      - ME_CONFIG_MONGODB_PORT=27017
+    depends_on:
+      - mongo
+    ports:
+      - 8081:8081
