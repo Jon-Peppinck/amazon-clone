@@ -1,11 +1,11 @@
 import { useEffect } from 'react';
-import { logout } from '../features/auth/authSlice';
+import { logout, selectedUser } from '../features/auth/authSlice';
 import { useAppDispatch, useAppSelector } from '../hooks/redux/hooks';
 
 const HomePage = () => {
   const dispatch = useAppDispatch();
 
-  const { user, jwt } = useAppSelector((state) => state.auth);
+  const { user, jwt } = useAppSelector(selectedUser);
 
   useEffect(() => {
     console.log(123, user, jwt);
