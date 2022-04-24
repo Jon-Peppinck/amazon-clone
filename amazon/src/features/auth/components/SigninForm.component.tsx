@@ -136,6 +136,7 @@ const SigninFormComponent: FC = () => {
             />
 
             <Button
+              id='signin-btn'
               disabled={
                 !validatePasswordLength(password) || !validateEmail(email)
               }
@@ -180,6 +181,7 @@ const SigninFormComponent: FC = () => {
         </Divider>
 
         <Link
+          id='register-link'
           to='/register'
           style={{ textDecoration: 'none', color: '#0000ee' }}
         >
